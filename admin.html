@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#123c34">
+  <title>لوحة إدارة Olivine School Dz</title>
+  <link rel="icon" href="/olivine-logo-display.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/admin.css">
+  <link rel="stylesheet" href="/premium.css">
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <a class="brand" href="/" aria-label="العودة إلى الصفحة العامة"><img src="/olivine-logo-display.jpg" alt="" width="52" height="58"><span class="brand-copy"><strong>Olivine School</strong><small>لوحة الإدارة</small></span></a>
+    <div class="admin-head-actions"><span id="admin-name" class="admin-name"></span><a class="button button-small" href="/">عرض الموقع ↗</a><button id="admin-logout" class="admin-logout" type="button">تسجيل الخروج</button></div>
+  </header>
+  <main class="admin-main">
+    <section class="admin-welcome"><p class="eyebrow"><span class="eyebrow-mark"></span> مساحة الإدارة</p><h1>من هنا تبدأ <em>الحكاية التالية</em></h1><p>أنشئ دورة أو شارك تحديثاً، وسيظهر المحتوى المنشور فوراً في الصفحة العامة.</p></section>
+    <div id="admin-alert" class="admin-alert" role="status" aria-live="polite" hidden></div>
+    <nav class="admin-tabs" role="tablist" aria-label="أقسام الإدارة">
+      <button class="admin-tab is-active" role="tab" aria-selected="true" data-view="course-form">دورة جديدة</button>
+      <button class="admin-tab" role="tab" aria-selected="false" data-view="post-form">منشور جديد</button>
+      <button class="admin-tab" role="tab" aria-selected="false" data-view="content-view">المحتوى المنشور</button>
+      <button class="admin-tab" role="tab" aria-selected="false" data-view="notice-view">البريد والإشعارات</button>
+    </nav>
+    <section class="admin-view is-active" id="course-form" role="tabpanel">
+      <div class="admin-card"><p class="eyebrow">تعريف برنامج</p><h2>أضف دورة إلى الموقع</h2><form id="new-course-form" class="admin-form">
+        <label>اسم الدورة<input name="title" maxlength="160" required placeholder="مثال: الإنجليزية للمبتدئين"></label>
+        <label>نبذة عن الدورة<textarea name="description" maxlength="6000" rows="5" required placeholder="اكتب وصفاً واضحاً للطلاب..."></textarea></label>
+        <label>تفاصيل إضافية<input name="details" maxlength="1000" placeholder="المستوى أو الجدول أو طريقة التسجيل"></label>
+        <label class="upload-label">صورة اختيارية للدورة<input name="media" type="file" accept="image/jpeg,image/png,image/webp"><small>JPG أو PNG أو WEBP · حتى 15 MB</small></label>
+        <label class="publish-toggle"><input name="publish" type="checkbox" checked> نشر الدورة فوراً في الصفحة العامة</label>
+        <button class="button" type="submit">حفظ الدورة ونشرها</button>
+      </form></div>
+    </section>
+    <section class="admin-view" id="post-form" role="tabpanel" hidden>
+      <div class="admin-card"><p class="eyebrow">أخبار المدرسة</p><h2>اكتب منشوراً جديداً</h2><form id="new-post-form" class="admin-form">
+        <label>عنوان المنشور<input name="title" maxlength="160" required placeholder="عنوان واضح وجذاب"></label>
+        <label>النص<textarea name="body" maxlength="6000" rows="7" required placeholder="شارك التفاصيل مع الطلاب وأولياء الأمور..."></textarea></label>
+        <label class="upload-label">صورة أو فيديو<input name="media" type="file" accept="image/jpeg,image/png,image/webp,video/mp4,video/webm"><small>JPG أو PNG أو WEBP أو MP4 أو WEBM · حتى 15 MB</small></label>
+        <label class="publish-toggle"><input name="publish" type="checkbox" checked> نشر المنشور فوراً في الصفحة العامة</label>
+        <button class="button" type="submit">حفظ المنشور</button>
+      </form></div>
+    </section>
+    <section class="admin-view" id="content-view" role="tabpanel" hidden>
+      <div class="admin-card"><div class="admin-card-heading"><div><p class="eyebrow">الدورات والمنشورات</p><h2>إدارة المحتوى</h2></div><button id="refresh-content" class="admin-logout" type="button">تحديث</button></div><div id="admin-content" class="admin-content"></div></div>
+    </section>
+    <section class="admin-view" id="notice-view" role="tabpanel" hidden>
+      <div class="admin-card"><p class="eyebrow">تنبيهات الإدارة</p><h2>البريد والإشعارات</h2><p id="email-status" class="email-status"></p><p class="email-help">عند نشر دورة أو منشور، يسجّل الموقع إشعاراً هنا ويرسل بريداً للإدارة عند ضبط SMTP في ملف <code>.env</code>. لا تظهر بيانات SMTP في المتصفح.</p><div id="admin-notifications" class="admin-content"></div></div>
+    </section>
+  </main>
+  <script src="/admin.js" defer></script>
+</body>
+</html>

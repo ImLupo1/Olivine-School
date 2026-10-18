@@ -1,0 +1,7 @@
+data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
+preview-server*.log
+server*.log
+.env
+data/media/
