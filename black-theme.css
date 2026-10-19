@@ -1,0 +1,232 @@
+html[data-theme="black"] {
+  color-scheme: dark;
+  --forest: #d8f3e5;
+  --forest-2: #a9ddc2;
+  --emerald: #6fe0b1;
+  --mint: #102219;
+  --cream: #050706;
+  --paper: #000000;
+  --gold: #e5c879;
+  --ink: #f1f5f1;
+  --muted: #a5afa8;
+  --line: #252c27;
+  background: #000;
+  color: var(--ink);
+}
+
+html[data-theme="black"] body:not(.posts-page) {
+  background: radial-gradient(ellipse at 13% 0%, #0b241a 0, transparent 35%), #000;
+  color: var(--ink);
+}
+
+html[data-theme="black"] ::selection { background: #6fe0b177; color: #fff; }
+html[data-theme="black"] .posts-page { background: #000; color: #f1f5f1; }
+html[data-theme="black"] .site-header,
+html[data-theme="black"] .posts-header,
+html[data-theme="black"] .admin-header {
+  background: #050706e8;
+  border-color: #26352c;
+  box-shadow: 0 8px 38px #55d89b0c;
+}
+html[data-theme="black"] .brand-copy strong,
+html[data-theme="black"] .main-nav,
+html[data-theme="black"] .posts-nav,
+html[data-theme="black"] .posts-account,
+html[data-theme="black"] .admin-logout,
+html[data-theme="black"] .admin-card h2,
+html[data-theme="black"] .admin-form>label:not(.publish-toggle),
+html[data-theme="black"] .admin-item h3,
+html[data-theme="black"] .admin-item-actions button { color: #eaf5ee; }
+html[data-theme="black"] .brand-copy small { color: #96a99d; }
+html[data-theme="black"] .main-nav>a:not(.button):hover,
+html[data-theme="black"] .posts-nav .is-current { color: var(--emerald); }
+html[data-theme="black"] .menu-toggle span { background: #eaf5ee; }
+
+html[data-theme="black"] .hero,
+html[data-theme="black"] .posts-hero {
+  background: radial-gradient(ellipse at 76% 35%, #123a2a88, transparent 35%), radial-gradient(ellipse at 10% 0%, #17160780, transparent 38%), linear-gradient(125deg, #030504, #050806 58%, #020302);
+  border-color: #24372b;
+}
+html[data-theme="black"] .hero::after { opacity: .15; }
+html[data-theme="black"] .hero h1,
+html[data-theme="black"] .section-heading h2,
+html[data-theme="black"] .section h2,
+html[data-theme="black"] .about-copy h2,
+html[data-theme="black"] .program-card h3,
+html[data-theme="black"] .contact-card strong,
+html[data-theme="black"] .dialog-top h2,
+html[data-theme="black"] .field label,
+html[data-theme="black"] .field legend,
+html[data-theme="black"] .settings-controls>label,
+html[data-theme="black"] .account-form label,
+html[data-theme="black"] .posts-hero h1,
+html[data-theme="black"] .posts-collection-head h2 { color: #f0f7f2; }
+html[data-theme="black"] .posts-hero h1 em,
+html[data-theme="black"] .posts-collection-head h2 em { color: #78dfab; }
+html[data-theme="black"] .hero-lede,
+html[data-theme="black"] .heading-row>p,
+html[data-theme="black"] .about-copy>p:not(.eyebrow),
+html[data-theme="black"] .card-description,
+html[data-theme="black"] .faq-list details p,
+html[data-theme="black"] .step p,
+html[data-theme="black"] .contact-meta,
+html[data-theme="black"] .faq-heading>p:not(.eyebrow),
+html[data-theme="black"] .posts-hero-text,
+html[data-theme="black"] .posts-collection-intro { color: #aab7ae; }
+html[data-theme="black"] .posts-scroll-link { color: #c8e6d4; border-color: #50745a; }
+html[data-theme="black"] .eyebrow,
+html[data-theme="black"] .posts-eyebrow { color: #9bcaaf; }
+html[data-theme="black"] .hero h1 em,
+html[data-theme="black"] .section h2 em { color: var(--emerald); }
+html[data-theme="black"] .hero-note,
+html[data-theme="black"] .hero-bottom { color: #93a198; }
+
+html[data-theme="black"] .photo-frame,
+html[data-theme="black"] .about-frame {
+  background: linear-gradient(145deg, #101b14, #030504);
+  border-color: #43694f;
+  box-shadow: 0 25px 85px #48dc9b24, inset 0 1px #ffffff18;
+}
+html[data-theme="black"] .photo-frame img { filter: saturate(.72) brightness(.82); }
+html[data-theme="black"] .hero-seal,
+html[data-theme="black"] .about-circle { background: linear-gradient(145deg, #10271b, #030504); border-color: #6fe0b1; box-shadow: 0 0 32px #6fe0b133; }
+html[data-theme="black"] .orbit,
+html[data-theme="black"] .about-frame::before,
+html[data-theme="black"] .about-frame::after { border-color: #6fe0b147; }
+
+html[data-theme="black"] .intro-strip,
+html[data-theme="black"] .levels-section,
+html[data-theme="black"] .inquiry-section,
+html[data-theme="black"] .posts-signoff,
+html[data-theme="black"] .posts-footer,
+html[data-theme="black"] .contact-primary {
+  background: radial-gradient(ellipse at 50% 0%, #17422d, transparent 58%), linear-gradient(115deg, #030604, #08120c 54%, #020403);
+  border-color: #2c4937;
+}
+html[data-theme="black"] .about-section,
+html[data-theme="black"] .process-section,
+html[data-theme="black"] .faq-section,
+html[data-theme="black"] .contact-section { background: #030504; }
+html[data-theme="black"] .program-card,
+html[data-theme="black"] .french-card,
+html[data-theme="black"] .turkish-card,
+html[data-theme="black"] .support-card,
+html[data-theme="black"] .step,
+html[data-theme="black"] .faq-list details,
+html[data-theme="black"] .contact-card:not(.contact-primary),
+html[data-theme="black"] .inquiry-form,
+html[data-theme="black"] .settings-dialog,
+html[data-theme="black"] .account-dialog,
+html[data-theme="black"] .posts-featured-card,
+html[data-theme="black"] .journal-card,
+html[data-theme="black"] .posts-empty,
+html[data-theme="black"] .admin-welcome,
+html[data-theme="black"] .admin-card,
+html[data-theme="black"] .admin-item {
+  background: linear-gradient(145deg, #0b100c, #050706 72%);
+  border-color: #26372c;
+  color: #edf4ef;
+  box-shadow: 0 15px 48px #0008, 0 0 26px #4dd69208;
+}
+html[data-theme="black"] .program-card:hover,
+html[data-theme="black"] .contact-card:hover,
+html[data-theme="black"] .journal-card:hover.is-visible,
+html[data-theme="black"] .admin-item:hover { border-color: #6fe0b174; box-shadow: 0 20px 55px #000a, 0 0 28px #4dd69215; }
+html[data-theme="black"] .card-glyph,
+html[data-theme="black"] .faq-list details[open],
+html[data-theme="black"] .email-status { background: #102219; color: #9de5bf; border-color: #315340; }
+html[data-theme="black"] .card-link,
+html[data-theme="black"] .faq-list details,
+html[data-theme="black"] .faq-list details:first-child,
+html[data-theme="black"] .level-item,
+html[data-theme="black"] .admin-tabs,
+html[data-theme="black"] .admin-item-actions button { border-color: #28372d; }
+html[data-theme="black"] .card-orbit { border-color: #42634d; }
+html[data-theme="black"] .site-footer { background: #020403; border-color: #1a2a20; }
+html[data-theme="black"] .live-courses-section { background: linear-gradient(180deg, #060907, #030504); border-color: #15271c; }
+html[data-theme="black"] .public-post-card { background: linear-gradient(145deg, #0b100c, #050706 72%); border-color: #26372c; color: #edf4ef; box-shadow: 0 15px 48px #0008, 0 0 26px #4dd69208; }
+html[data-theme="black"] .public-post-card:hover { border-color: #6fe0b174; box-shadow: 0 20px 55px #000a, 0 0 28px #4dd69215; }
+html[data-theme="black"] .public-post-copy h3 { color: #eef8f1; }
+
+html[data-theme="black"] .button,
+html[data-theme="black"] .posts-account {
+  background: linear-gradient(120deg, #10281c, #0b1a12);
+  border-color: #5bc18f;
+  color: #eafff2;
+  box-shadow: 0 7px 25px #53d6971a, inset 0 1px #ffffff12;
+}
+html[data-theme="black"] .button:hover,
+html[data-theme="black"] .posts-account:hover { background: linear-gradient(120deg, #6fe0b1, #b4e7a1); color: #06110b; border-color: #9ce9bd; box-shadow: 0 10px 34px #53d69745; }
+html[data-theme="black"] .button-light { background: #0b1710; color: #e6f5eb; border-color: #4b8060; }
+html[data-theme="black"] .button-light:hover { background: #173725; color: #fff; }
+html[data-theme="black"] .text-link,
+html[data-theme="black"] .card-link,
+html[data-theme="black"] .admin-tab.is-active { color: #a6e8c0; }
+
+html[data-theme="black"] .field input,
+html[data-theme="black"] .field select,
+html[data-theme="black"] .field textarea,
+html[data-theme="black"] .account-form input,
+html[data-theme="black"] .settings-controls select,
+html[data-theme="black"] .admin-form input:not([type=checkbox]),
+html[data-theme="black"] .admin-form textarea,
+html[data-theme="black"] .posts-search {
+  background: #050706;
+  color: #f1f5f1;
+  border-color: #34463a;
+}
+html[data-theme="black"] .field input::placeholder,
+html[data-theme="black"] .field textarea::placeholder,
+html[data-theme="black"] .posts-search input { color: #87968c; }
+html[data-theme="black"] .dialog-close,
+html[data-theme="black"] .post-detail-close { background: #0d1510; color: #e6f5eb; border-color: #3d5846; }
+html[data-theme="black"] .post-detail-dialog { background: #050706; color: #edf4ef; border-color: #324738; }
+html[data-theme="black"] .detail-copy h2,
+html[data-theme="black"] .journal-card h3,
+html[data-theme="black"] .posts-empty h3 { color: #eef8f1; }
+html[data-theme="black"] .journal-card-copy>p,
+html[data-theme="black"] .posts-empty>p:not(.posts-section-eyebrow),
+html[data-theme="black"] .detail-copy>p:last-child { color: #aab7ae; }
+html[data-theme="black"] .admin-alert { background: #102219; color: #c8f0d8; border-color: #6fe0b1; }
+html[data-theme="black"] .admin-alert[data-state="error"] { background: #26110f; color: #ffc0b7; border-color: #cc7569; }
+html[data-theme="black"] .admin-item-actions button[data-action="delete"] { color: #ffaaa0; border-color: #64352f; }
+html[data-theme="black"] .admin-status { background: #102219; color: #a9eac1; }
+html[data-theme="black"] .admin-status[data-status="draft"] { background: #241d0f; color: #e8cf92; }
+html[data-theme="black"] .posts-toolbar { border-color: #26372c; }
+html[data-theme="black"] .posts-search:focus-within { border-color: #6fe0b1; box-shadow: 0 0 0 3px #6fe0b11c; }
+html[data-theme="black"] .post-filter { color: #a5b2a9; }
+html[data-theme="black"] .post-filter:hover { color: #d5f3e2; }
+html[data-theme="black"] .post-filter.is-active { background: #102219; color: #b5efcd; border-color: #42634d; }
+html[data-theme="black"] .featured-visual,
+html[data-theme="black"] .journal-media,
+html[data-theme="black"] .detail-media { background: #070b08; }
+html[data-theme="black"] .featured-placeholder,
+html[data-theme="black"] .journal-placeholder { background: radial-gradient(ellipse at 50% 40%, #173a2780, transparent 48%), linear-gradient(140deg, #080c09, #111912); }
+html[data-theme="black"] .featured-placeholder-mark,
+html[data-theme="black"] .journal-placeholder span { color: #85d9a9; text-shadow: 0 0 38px #5bd99335; }
+html[data-theme="black"] .featured-placeholder-word,
+html[data-theme="black"] .journal-placeholder i { color: #a3bba8; }
+html[data-theme="black"] .posts-section-eyebrow { color: #9bcaaa; }
+html[data-theme="black"] .posts-section-eyebrow span,
+html[data-theme="black"] .journal-meta,
+html[data-theme="black"] .featured-meta { color: #a7bbae; }
+html[data-theme="black"] .featured-tag { color: #ebd99e; border-color: #8e7a4e; }
+html[data-theme="black"] .read-post { color: #c4edcf; border-color: #7da681; }
+
+html[data-theme="black"] .hero-seal,
+html[data-theme="black"] .hero-wash,
+html[data-theme="black"] .posts-hero-art,
+html[data-theme="black"] .hero-art-glass { filter: drop-shadow(0 0 24px #6fe0b126); }
+html[data-theme="black"] .hero-art-glass { background: linear-gradient(145deg, #16291cbd, #050806a8); border-color: #89ddb05c; box-shadow: 0 24px 90px #4ce29b24, inset 0 1px #ffffff32; }
+html[data-theme="black"] .posts-hero-bottom,
+html[data-theme="black"] .posts-footer { color: #a4b9aa; }
+html[data-theme="black"] :focus-visible { outline-color: #9ce9bd; }
+
+html[data-theme="black"] .faq-list details:not([open]){background:linear-gradient(145deg,#0b100c,#050706 72%);border-color:#26372c;box-shadow:0 12px 34px #0006,0 0 20px #4dd69208}
+html[data-theme="black"] .faq-list details[open]{background:linear-gradient(145deg,#102219,#080d0a);border-color:#416d50;box-shadow:0 16px 38px #0009,0 0 26px #4dd69212,inset 0 1px #ffffff0b}
+html[data-theme="black"] .faq-list summary{color:#eaf3ed}
+html[data-theme="black"] .faq-list summary::before{background:#11251a;color:#8ed8aa}
+html[data-theme="black"] .faq-list summary span{background:#0e1b13;border-color:#385441;color:#9de5bf}
+html[data-theme="black"] .faq-list details[open] summary span{background:#9de5bf;border-color:#9de5bf;color:#051008}
+html[data-theme="black"] .faq-list details p{color:#b2c1b7}
+html[data-theme="black"] .faq-list details:hover{border-color:#6fe0b174;box-shadow:0 18px 46px #000a,0 0 28px #4dd69215}

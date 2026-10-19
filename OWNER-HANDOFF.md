@@ -2,7 +2,7 @@
 
 ## Included
 
-The site has Arabic, French and English content, an RTL/LTR language switch, five color themes, higher-contrast preference, and a settings dialog. It has a shared glossy visual system, responsive layouts, reduced-motion support, student accounts and a role-protected admin dashboard for publishing courses and school posts with images or videos. Published content appears in the homepage preview and the full journal at `/posts`, as well as in the student account panel.
+The site has Arabic, French and English content, a language switch that keeps the page anchored RTL, English/French/Turkish/Spanish/German programs, two color themes (Olivine green and luxury black), and a higher-contrast preference. It has a shared glossy visual system, responsive layouts, reduced-motion support, student accounts and a role-protected admin dashboard for publishing courses and school posts with images or videos. Published content appears in the homepage preview and the full journal at `/posts`, as well as in the student account panel.
 
 The account database stores a display name, email, role, scrypt password hash, and session records. It does not store grades, health information, student records or enrollment inquiries. The inquiry form still prepares an email or WhatsApp message for the visitor to review and send; completing the form does not submit or confirm registration. Published content and uploaded media are stored in SQLite and `data/media/`.
 
@@ -20,7 +20,7 @@ The account database stores a display name, email, role, scrypt password hash, a
 
 ## Files
 
-- `index.html` — site content, contact links, account and settings dialogs.
+- `index.html` — site content, contact links, and the account dialog.
 - `styles.css` — responsive layout, RTL/LTR handling, themes, and reduced-motion support.
 - `premium.css` — shared visual polish, animation system and responsive refinements for the homepage and admin workspace.
 - `locales.js` — Arabic/French/English copy, language, theme, contrast settings.

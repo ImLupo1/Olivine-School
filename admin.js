@@ -49,6 +49,7 @@ async function saveForm(form, kind) {
   const submit = form.querySelector('button[type=submit]');
   submit.disabled = true;
   setAlert('جارٍ حفظ المحتوى...');
+  let uploadedPath = '';
   try {
     const values = Object.fromEntries(new FormData(form).entries());
     const file = form.elements.media.files[0];
@@ -60,6 +61,7 @@ async function saveForm(form, kind) {
       const media = await api('/api/admin/media', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(uploaded) });
       mediaPath = media.path;
       mediaType = media.type;
+      uploadedPath = media.path;
     }
     const payload = kind === 'courses'
       ? { title: values.title, description: values.description, details: values.details || '', mediaPath, status: values.publish ? 'published' : 'draft' }
@@ -69,6 +71,10 @@ async function saveForm(form, kind) {
     form.elements.publish.checked = true;
     setAlert(payload.status === 'published' ? 'تم النشر بنجاح. أصبح المحتوى متاحاً في الموقع.' : 'تم حفظ المحتوى كمسودة.');
   } catch (error) {
+    if (uploadedPath) {
+      try { await api('/api/admin/media', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ path: uploadedPath }) }); }
+      catch { /* Keep the original publish error visible if cleanup is unavailable. */ }
+    }
     setAlert(error.message === 'forbidden' ? 'هذا الحساب لا يملك صلاحية الإدارة.' : error.message, true);
   } finally { submit.disabled = false; }
 }

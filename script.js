@@ -5,13 +5,13 @@ const inquiryForm = document.querySelector('#inquiry-form');
 const inquiryResult = document.querySelector('#form-result');
 const serviceSelect = document.querySelector('#service');
 const levelField = document.querySelector('#level-field');
-const settingsDialog = document.querySelector('#settings-dialog');
 const accountDialog = document.querySelector('#account-dialog');
 const accountTabs = document.querySelector('.account-tabs');
 const loginForm = document.querySelector('#login-form');
 const registerForm = document.querySelector('#register-form');
 const accountPanel = document.querySelector('#account-panel');
 const accountMessage = document.querySelector('#account-message');
+let accountReturnTo = '';
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
@@ -151,7 +151,6 @@ inquiryForm.querySelectorAll('input, select, textarea').forEach((field) => {
   });
 });
 
-document.querySelectorAll('.settings-open').forEach((button) => button.addEventListener('click', () => settingsDialog.showModal()));
 document.querySelectorAll('.account-open').forEach((button) => button.addEventListener('click', async () => {
   closeMobileMenu();
   accountMessage.textContent = '';
@@ -213,6 +212,7 @@ function showAccount(user) {
   const adminLink = document.querySelector('#admin-dashboard-link');
   adminLink.hidden = user.role !== 'admin';
   loadStudentDashboard();
+  window.dispatchEvent(new CustomEvent('olivine:account', { detail: user }));
 }
 
 function formatContentDate(date) {
@@ -249,14 +249,81 @@ function courseCard(item, index) {
   return article;
 }
 
-function postCard(item) {
+function postCard(item, kind = 'post') {
   const article = document.createElement('article'); article.className = 'public-post-card reveal-on-scroll';
   if (item.mediaPath) { const media = document.createElement('div'); media.className = 'public-post-media'; addContentMedia(media, item); article.append(media); }
   const content = document.createElement('div'); content.className = 'public-post-copy';
   const date = document.createElement('p'); date.className = 'eyebrow'; date.textContent = formatContentDate(item.createdAt);
   const title = document.createElement('h3'); title.textContent = item.title;
-  const body = document.createElement('p'); body.textContent = item.body;
-  content.append(date, title, body); article.append(content); return article;
+  const body = document.createElement('p'); body.className = 'public-post-body'; body.textContent = kind === 'course' ? [item.description, item.details].filter(Boolean).join('\n\n') : item.body;
+  content.append(date, title, body, createHomeSocialActions(item, kind)); article.append(content); return article;
+}
+
+function homeSocialCopy() {
+  const lang = document.documentElement.lang;
+  return lang === 'fr'
+    ? { like: 'J’aime', liked: 'Retirer le J’aime', save: 'Enregistrer', saved: 'Enregistré', comments: 'Commentaires', share: 'Partager', copy: 'Copiez le lien de la publication :' }
+    : lang === 'en'
+      ? { like: 'Like', liked: 'Unlike', save: 'Save post', saved: 'Saved', comments: 'Comments', share: 'Share', copy: 'Copy the post link:' }
+      : { like: 'إعجاب', liked: 'إلغاء الإعجاب', save: 'حفظ المنشور', saved: 'تم الحفظ', comments: 'التعليقات', share: 'مشاركة', copy: 'انسخ رابط المنشور:' };
+}
+
+function createHomeSocialActions(item, kind = 'post') {
+  const labels = homeSocialCopy();
+  const actions = document.createElement('div'); actions.className = 'public-post-social-actions';
+  const itemId = Number(item.id);
+  const like = document.createElement('button'); like.type = 'button'; like.dataset.homeSocial = 'like'; like.dataset.itemKind = kind; like.dataset.itemId = String(itemId);
+  like.setAttribute('aria-pressed', String(Boolean(item.likedByMe))); like.setAttribute('aria-label', item.likedByMe ? labels.liked : labels.like);
+  like.classList.toggle('is-active', Boolean(item.likedByMe));
+  const heart = document.createElement('span'); heart.setAttribute('aria-hidden', 'true'); heart.textContent = '♥';
+  const likeCount = document.createElement('span'); likeCount.dataset.homeCount = 'like'; likeCount.textContent = String(Number(item.likeCount || 0));
+  like.append(heart, likeCount);
+  const comments = document.createElement('a'); comments.className = 'public-post-comments'; comments.href = `/posts?${kind}=${itemId}&action=comments`; comments.setAttribute('aria-label', labels.comments);
+  comments.innerHTML = `<span aria-hidden="true">◌</span><span>${Number(item.commentCount || 0)}</span>`;
+  const save = document.createElement('button'); save.type = 'button'; save.dataset.homeSocial = 'bookmark'; save.dataset.itemKind = kind; save.dataset.itemId = String(itemId);
+  save.setAttribute('aria-pressed', String(Boolean(item.bookmarkedByMe))); save.setAttribute('aria-label', item.bookmarkedByMe ? labels.saved : labels.save);
+  save.classList.toggle('is-active', Boolean(item.bookmarkedByMe));
+  const star = document.createElement('span'); star.setAttribute('aria-hidden', 'true'); star.textContent = item.bookmarkedByMe ? '★' : '☆'; save.append(star);
+  const share = document.createElement('button'); share.type = 'button'; share.dataset.homeSocial = 'share'; share.dataset.itemKind = kind; share.dataset.itemId = String(itemId); share.setAttribute('aria-label', labels.share); share.textContent = '↗';
+  actions.append(like, comments, save, share);
+  return actions;
+}
+
+function homeSignInUrl(itemId, action, kind = 'post') {
+  const target = new URL(`/posts?${kind}=${Number(itemId)}`, location.origin);
+  if (action) target.searchParams.set('action', action);
+  return `/?account=1&return=${encodeURIComponent(`${target.pathname}${target.search}`)}`;
+}
+
+async function handleHomeSocialAction(button) {
+  const labels = homeSocialCopy();
+  const itemId = Number(button.dataset.itemId);
+  const kind = button.dataset.itemKind === 'course' ? 'course' : 'post';
+  const action = button.dataset.homeSocial;
+  if (!itemId || !['like', 'bookmark', 'share'].includes(action)) return;
+  if (action === 'share') {
+    const url = `${location.origin}/posts?${kind}=${itemId}`;
+    try {
+      if (navigator.share) await navigator.share({ title: document.title, url });
+      else if (navigator.clipboard?.writeText && window.isSecureContext) { await navigator.clipboard.writeText(url); button.title = '✓'; }
+      else window.prompt(labels.copy, url);
+    } catch (error) { if (error.name !== 'AbortError') window.prompt(labels.copy, url); }
+    return;
+  }
+  button.disabled = true;
+  try {
+    const response = await fetch(`/api/${kind === 'course' ? 'courses' : 'posts'}/${itemId}/${action}`, { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: '{}' });
+    if (response.status === 401) { location.href = homeSignInUrl(itemId, action, kind); return; }
+    if (!response.ok) throw new Error('social_action_failed');
+    const result = await response.json();
+    const active = action === 'like' ? result.liked : result.bookmarked;
+    button.setAttribute('aria-pressed', String(active));
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-label', action === 'like' ? (active ? labels.liked : labels.like) : (active ? labels.saved : labels.save));
+    if (action === 'like') button.querySelector('[data-home-count="like"]').textContent = String(result.likeCount);
+    else button.querySelector('[aria-hidden="true"]').textContent = active ? '★' : '☆';
+  } catch { button.title = i18n.t('تعذر تنفيذ الطلب'); }
+  finally { button.disabled = false; }
 }
 
 async function loadStudentDashboard() {
@@ -287,10 +354,24 @@ async function loadPublicContent() {
     if (!response.ok) return;
     const data = await response.json();
     const courseGrid = document.querySelector('#live-course-grid');
-    data.courses.forEach((item, index) => courseGrid.append(courseCard(item, index)));
-    courseGrid.hidden = data.courses.length === 0;
+    data.courses.forEach((item) => courseGrid.append(postCard(item, 'course')));
+    document.querySelector('#live-course-empty').hidden = data.courses.length > 0;
     const news = document.querySelector('#school-news');
     const postGrid = document.querySelector('#public-post-grid');
+    const grids = [courseGrid, postGrid];
+    grids.forEach((grid) => grid.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-home-social]');
+      if (button) handleHomeSocialAction(button);
+    }));
+    new MutationObserver(() => {
+      const labels = homeSocialCopy();
+      grids.forEach((grid) => {
+        grid.querySelectorAll('button[data-home-social="like"]').forEach((button) => button.setAttribute('aria-label', button.getAttribute('aria-pressed') === 'true' ? labels.liked : labels.like));
+        grid.querySelectorAll('button[data-home-social="bookmark"]').forEach((button) => button.setAttribute('aria-label', button.getAttribute('aria-pressed') === 'true' ? labels.saved : labels.save));
+        grid.querySelectorAll('button[data-home-social="share"]').forEach((button) => button.setAttribute('aria-label', labels.share));
+        grid.querySelectorAll('.public-post-comments').forEach((link) => link.setAttribute('aria-label', labels.comments));
+      });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
     data.posts.forEach((item) => postGrid.append(postCard(item)));
     news.hidden = data.posts.length === 0;
     revealElements([...courseGrid.children, ...postGrid.children]);
@@ -339,6 +420,12 @@ async function submitAccountForm(event, endpoint, successKey) {
       setAccountMessage(accountErrorMessage(data.error), true);
       return;
     }
+    if (accountReturnTo) {
+      const destination = accountReturnTo;
+      accountReturnTo = '';
+      location.assign(destination);
+      return;
+    }
     showAccount(data.user);
     setAccountMessage(i18n.t(successKey), false);
   } catch {
@@ -361,11 +448,15 @@ document.querySelector('#logout-button').addEventListener('click', async () => {
   }
 });
 
-document.querySelector('#language-setting').addEventListener('change', () => {
-  setAccountMessage('', false);
-});
-
-if (new URLSearchParams(location.search).has('account')) {
+const accountQuery = new URLSearchParams(location.search);
+if (accountQuery.has('account')) {
+  const returnTo = accountQuery.get('return');
+  if (returnTo) {
+    try {
+      const target = new URL(returnTo, location.origin);
+      if (target.origin === location.origin && target.pathname === '/posts') accountReturnTo = `${target.pathname}${target.search}${target.hash}`;
+    } catch { /* Ignore malformed or external return URLs. */ }
+  }
   history.replaceState(null, '', `${location.pathname}${location.hash}`);
   document.querySelector('.account-open')?.click();
 }

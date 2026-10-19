@@ -30,8 +30,11 @@
     'معرفة تُفتح بها الآفاق': ['Le savoir ouvre de nouveaux horizons', 'Knowledge opens new horizons'],
     'مرّر لاكتشاف البرامج': ['Faites défiler pour découvrir nos programmes', 'Scroll to explore our programs'],
     'مسارات للتعلّم': ['Parcours d’apprentissage', 'Learning paths'], 'الإنجليزية': ['Anglais', 'English'],
-    'الفرنسية': ['Français', 'French'], 'التركية': ['Turc', 'Turkish'], 'دعم دراسي': ['Soutien scolaire', 'Academic tutoring'],
+    'الفرنسية': ['Français', 'French'], 'التركية': ['Turc', 'Turkish'], 'الإسبانية': ['Espagnol', 'Spanish'], 'الألمانية': ['Allemand', 'German'], 'دعم دراسي': ['Soutien scolaire', 'Academic tutoring'],
     'برامجنا': ['Nos programmes', 'Our programs'], 'مساحة تنمو فيها': ['Un espace pour développer', 'A place to grow your'],
+    'فرص التعلّم': ['Opportunités d’apprentissage', 'Learning opportunities'], 'الدورات': ['Cours', 'Courses'], 'المنشورة': ['publiés', 'published'], 'الدورات المنشورة': ['Cours publiés', 'Published courses'],
+    'تعرّف على الدورات المتاحة، وشارك تجربتك أو استفسارك مع مجتمع Olivine.': ['Découvrez les cours disponibles et partagez votre expérience ou vos questions avec la communauté Olivine.', 'Explore available courses and share your experience or questions with the Olivine community.'],
+    'كل الدورات': ['Tous les cours', 'All courses'], 'لا توجد دورات منشورة حالياً. تابعنا للاطلاع على الدورات الجديدة.': ['Aucun cours publié pour le moment. Revenez découvrir les nouveautés.', 'No courses are published yet. Check back for new courses.'],
     'المهارات': ['vos compétences', 'skills'],
     'سواء كنت تخطو نحو لغة جديدة أو تبحث عن دعم دراسي، تعرّف على البرامج التي يمكنك الاستفسار عنها.': ['Que vous souhaitiez apprendre une nouvelle langue ou bénéficier d’un soutien scolaire, découvrez les programmes disponibles.', 'Whether you want to learn a new language or get academic support, explore the programs you can ask us about.'],
     'تعلّم اللغات': ['Apprentissage des langues', 'Language learning'],
@@ -39,6 +42,9 @@
     'استفسر عن البرنامج': ['En savoir plus', 'Ask about this program'],
     'اسأل فريق المدرسة عن دورات الفرنسية ومواعيدها المتاحة.': ['Contactez l’école pour connaître les cours de français et les horaires disponibles.', 'Ask the school about French courses and available schedules.'],
     'تواصل معنا لمعرفة تفاصيل برنامج اللغة التركية والتسجيل.': ['Contactez-nous pour connaître les détails des cours de turc et de l’inscription.', 'Contact us for details about Turkish courses and enrollment.'],
+    'تعلّم اللغة الإسبانية ضمن برامج Olivine School.': ['Apprenez l’espagnol dans les programmes d’Olivine School.', 'Learn Spanish through Olivine School programs.'],
+    'تعلّم اللغة الألمانية ضمن برامج Olivine School.': ['Apprenez l’allemand dans les programmes d’Olivine School.', 'Learn German through Olivine School programs.'],
+    'نقدّم تعلّم الإنجليزية والفرنسية والتركية والإسبانية والألمانية، إلى جانب الدعم الدراسي لمراحل تعليمية مختلفة.': ['Nous proposons des cours d’anglais, de français, de turc, d’espagnol et d’allemand, ainsi qu’un soutien scolaire à plusieurs niveaux.', 'We teach English, French, Turkish, Spanish, and German, alongside academic tutoring for different school levels.'],
     'مرافقة دراسية': ['Accompagnement scolaire', 'Academic support'], 'دروس الدعم': ['Soutien scolaire', 'Academic tutoring'],
     'دعم دراسي لتلاميذ الابتدائي والمتوسط والثانوي. أكّد معنا المواد المتاحة.': ['Soutien scolaire pour les niveaux primaire, moyen et secondaire. Contactez-nous pour confirmer les matières proposées.', 'Tutoring for primary, middle, and secondary students. Contact us to confirm the subjects currently offered.'],
     'الدعم الدراسي': ['Soutien scolaire', 'Academic tutoring'], 'دعم يناسب': ['Un accompagnement adapté', 'Support for'],
@@ -62,7 +68,7 @@
     'نجيب عن استفساراتكم': ['Vos questions', 'Here to answer your questions'], 'أسئلة': ['Questions', 'Questions'], 'شائعة': ['fréquentes', 'common'],
     'لم تجد ما تبحث عنه؟ يسعدنا تواصلك معنا مباشرة.': ['Vous ne trouvez pas la réponse ? Contactez-nous directement.', 'Didn’t find what you need? Contact us directly.'],
     'ما اللغات التي يمكنني الاستفسار عنها؟': ['Quelles langues puis-je découvrir ?', 'Which languages can I ask about?'],
-    'يمكنك الاستفسار عن دورات اللغة الإنجليزية والفرنسية والتركية. تواصل معنا لتأكيد الدورات المتاحة حالياً.': ['Vous pouvez demander des informations sur les cours d’anglais, de français et de turc. Contactez-nous pour confirmer les cours actuellement proposés.', 'You can ask about English, French, and Turkish courses. Contact us to confirm current availability.'],
+    'تقدّم Olivine School تعلّم الإنجليزية والفرنسية والتركية والإسبانية والألمانية. تواصل معنا لمعرفة تفاصيل البرامج والمواعيد.': ['Olivine School enseigne l’anglais, le français, le turc, l’espagnol et l’allemand. Contactez-nous pour connaître les détails des programmes et des horaires.', 'Olivine School teaches English, French, Turkish, Spanish, and German. Contact us for program and schedule details.'],
     'هل تتوفر دروس دعم لكل المراحل؟': ['Y a-t-il du soutien pour chaque niveau ?', 'Is tutoring available for each school level?'],
     'تقدّم المدرسة دروس دعم لتلاميذ الابتدائي والمتوسط والثانوي. يُرجى التواصل للتأكد من المواد والمستويات المتاحة حالياً.': ['L’école propose du soutien scolaire aux élèves du primaire, du moyen et du secondaire. Contactez-nous pour confirmer les matières et niveaux disponibles.', 'The school offers tutoring for primary, middle, and secondary students. Contact us to confirm current subjects and availability.'],
     'كيف أعرف المواعيد والأسعار؟': ['Comment connaître les horaires et les tarifs ?', 'How can I find out about schedules and fees?'],
@@ -78,7 +84,7 @@
     'الاسم': ['Nom', 'Name'], 'رقم الهاتف أو البريد الإلكتروني': ['Téléphone ou adresse e-mail', 'Phone number or email'],
     'ما الذي تود الاستفسار عنه؟': ['Quel est votre sujet ?', 'What would you like to ask about?'], 'اختر البرنامج': ['Choisir un programme', 'Choose a program'],
     'دروس اللغة الإنجليزية': ['Cours d’anglais', 'English courses'], 'دروس اللغة الفرنسية': ['Cours de français', 'French courses'],
-    'دروس اللغة التركية': ['Cours de turc', 'Turkish courses'], 'استفسار عام': ['Demande générale', 'General inquiry'],
+    'دروس اللغة التركية': ['Cours de turc', 'Turkish courses'], 'دروس اللغة الإسبانية': ['Cours d’espagnol', 'Spanish courses'], 'دروس اللغة الألمانية': ['Cours d’allemand', 'German courses'], 'استفسار عام': ['Demande générale', 'General inquiry'],
     'المرحلة التعليمية': ['Niveau scolaire', 'School level'], '(اختياري)': ['(facultatif)', '(optional)'], 'اختر المرحلة': ['Choisir un niveau', 'Choose a level'],
     'طريقة التواصل المفضّلة': ['Moyen de contact préféré', 'Preferred contact method'], 'واتساب': ['WhatsApp', 'WhatsApp'], 'البريد الإلكتروني': ['E-mail', 'Email'],
     'رسالتك': ['Votre message', 'Your message'], 'أوافق على فتح تطبيق المراسلة لإرسال هذا الاستفسار. لن تُرسل بياناتي أو تُخزّن على هذا الموقع.': ['J’accepte d’ouvrir l’application de messagerie pour envoyer cette demande. Ce site ne transmet ni ne stocke mes données.', 'I agree to open a messaging app to send this inquiry. This site does not send or store my information.'],
@@ -95,9 +101,9 @@
     'Olivine School Dz · جميع الحقوق محفوظة': ['Olivine School Dz · Tous droits réservés', 'Olivine School Dz · All rights reserved'],
     'مساحة حساب Olivine': ['Espace membre Olivine', 'Olivine member space'],
     'إعدادات الموقع': ['Paramètres du site', 'Site settings'], 'لغة الموقع': ['Langue du site', 'Website language'], 'العربية': ['العربية', 'Arabic'],
-    'المظهر والألوان': ['Apparence et couleurs', 'Appearance and colors'], 'أخضر أوليفين': ['Vert Olivine', 'Olivine green'],
-    'أسود ليلي': ['Noir nuit', 'Midnight black'], 'أزرق بحري': ['Bleu océan', 'Ocean blue'], 'بنفسجي هادئ': ['Prune doux', 'Soft plum'], 'رملي دافئ': ['Sable chaud', 'Warm sand'],
-    'تباين أعلى': ['Contraste renforcé', 'Higher contrast'], 'تُحفظ اللغة والمظهر على هذا الجهاز فقط.': ['La langue et l’apparence sont enregistrées sur cet appareil uniquement.', 'Language and appearance are saved on this device only.'],
+    'أسود فخم': ['Noir luxueux', 'Luxury Black'],
+    'تبديل إلى أسود فخم': ['Passer au noir luxueux', 'Switch to Luxury Black'], 'تبديل إلى أخضر أوليفين': ['Passer au vert Olivine', 'Switch to Olivine Green'],
+    'تباين أعلى': ['Contraste renforcé', 'Higher contrast'], 'تُحفظ اللغة وإعداد التباين على هذا الجهاز فقط.': ['La langue et le contraste sont enregistrés sur cet appareil uniquement.', 'Language and contrast settings are saved on this device only.'],
     'تسجيل الدخول': ['Connexion', 'Sign in'], 'إنشاء حساب': ['Créer un compte', 'Create account'], 'كلمة المرور': ['Mot de passe', 'Password'],
     'كلمة المرور (12 خانة على الأقل)': ['Mot de passe (12 caractères minimum)', 'Password (at least 12 characters)'], 'إنشاء الحساب': ['Créer le compte', 'Create account'],
     'تابع الدورات والمنشورات الجديدة في الموقع، وتواصل معنا للاستفسار عن التسجيل.': ['Suivez les nouveaux cours et publications, puis contactez-nous pour toute question sur l’inscription.', 'Follow new courses and posts, and contact us with enrollment questions.'],
@@ -113,10 +119,13 @@
 
   const attributes = {
     'Olivine School Dz، الصفحة الرئيسية': ['Olivine School Dz, accueil', 'Olivine School Dz home'],
+    'تغيير لغة الموقع': ['Changer la langue du site', 'Change website language'],
+    'اختر لغة الموقع': ['Choisir la langue du site', 'Choose website language'],
     'التنقل الرئيسي': ['Navigation principale', 'Main navigation'],
     'تصفية المنشورات': ['Filtrer les publications', 'Filter posts'], 'ابحث في المنشورات': ['Rechercher dans les publications', 'Search posts'],
     'تفاصيل المنشور': ['Détails de la publication', 'Post details'],
     'فتح القائمة': ['Ouvrir le menu', 'Open menu'], 'إغلاق القائمة': ['Fermer le menu', 'Close menu'],
+    'التبديل إلى أسود فخم': ['Passer au noir luxueux', 'Switch to Luxury Black'], 'التبديل إلى أخضر أوليفين': ['Passer au vert Olivine', 'Switch to Olivine Green'],
     'إغلاق': ['Fermer', 'Close'], 'شعار Olivine School Dz': ['Logo Olivine School Dz', 'Olivine School Dz logo'],
     'طلاب يدرسون معاً في قاعة تعليمية': ['Des élèves étudient ensemble dans une salle de classe', 'Students studying together in a classroom'],
     'الاسم الذي نُناديك به': ['Le nom à utiliser', 'The name we should use'],
@@ -138,7 +147,8 @@
       accountCreated: 'تم إنشاء الحساب وتسجيل الدخول.', signedIn: 'تم تسجيل الدخول بنجاح.', signedOut: 'تم تسجيل الخروج.',
       'آخر ما نُشر': 'آخر ما نُشر', 'ستظهر الدورات والمنشورات الجديدة هنا.': 'ستظهر الدورات والمنشورات الجديدة هنا.',
       'دورة جديدة': 'دورة جديدة', 'منشور جديد': 'منشور جديد',
-      emailLabel: 'البريد الإلكتروني', login: 'تسجيل الدخول', register: 'إنشاء حساب', openMenu: 'فتح القائمة', closeMenu: 'إغلاق القائمة',
+      emailLabel: 'البريد الإلكتروني', login: 'تسجيل الدخول', register: 'إنشاء حساب', openMenu: 'فتح القائمة', closeMenu: 'إغلاق القائمة', switchToLuxuryBlack: 'التبديل إلى أسود فخم', switchToOlivineGreen: 'التبديل إلى أخضر أوليفين',
+      languageButton: 'تغيير اللغة إلى', languageNames: { ar: 'العربية', fr: 'الفرنسية', en: 'الإنجليزية' },
     },
     fr: {
       formReady: 'Message préparé. Il n’a pas encore été envoyé ; vérifiez-le dans l’application puis appuyez sur Envoyer.',
@@ -153,7 +163,8 @@
       accountCreated: 'Compte créé. Vous êtes connecté.', signedIn: 'Connexion réussie.', signedOut: 'Vous êtes déconnecté.',
       'آخر ما نُشر': 'Dernières publications', 'ستظهر الدورات والمنشورات الجديدة هنا.': 'Les nouveaux cours et publications apparaîtront ici.',
       'دورة جديدة': 'Nouveau cours', 'منشور جديد': 'Nouvelle publication',
-      emailLabel: 'Adresse e-mail', login: 'Connexion', register: 'Créer un compte', openMenu: 'Ouvrir le menu', closeMenu: 'Fermer le menu',
+      emailLabel: 'Adresse e-mail', login: 'Connexion', register: 'Créer un compte', openMenu: 'Ouvrir le menu', closeMenu: 'Fermer le menu', switchToLuxuryBlack: 'Passer au noir luxueux', switchToOlivineGreen: 'Passer au vert Olivine',
+      languageButton: 'Changer la langue vers', languageNames: { ar: 'arabe', fr: 'français', en: 'anglais' },
     },
     en: {
       formReady: 'Message prepared. It has not been sent yet; review it in the app, then press Send.',
@@ -168,14 +179,15 @@
       accountCreated: 'Account created and signed in.', signedIn: 'You are signed in.', signedOut: 'You are signed out.',
       'آخر ما نُشر': 'Latest updates', 'ستظهر الدورات والمنشورات الجديدة هنا.': 'New courses and posts will appear here.',
       'دورة جديدة': 'New course', 'منشور جديد': 'New post',
-      emailLabel: 'Email address', login: 'Sign in', register: 'Create account', openMenu: 'Open menu', closeMenu: 'Close menu',
+      emailLabel: 'Email address', login: 'Sign in', register: 'Create account', openMenu: 'Open menu', closeMenu: 'Close menu', switchToLuxuryBlack: 'Switch to Luxury Black', switchToOlivineGreen: 'Switch to Olivine Green',
+      languageButton: 'Change language to', languageNames: { ar: 'Arabic', fr: 'French', en: 'English' },
     },
   };
 
   const languageMeta = {
-    ar: { dir: 'rtl', title: 'Olivine School Dz | لغات ودعم دراسي في البليدة', description: 'Olivine School Dz في أولاد يعيش، البليدة: دورات في الإنجليزية والفرنسية والتركية، ودروس دعم للمراحل الابتدائية والمتوسطة والثانوية.' },
-    fr: { dir: 'ltr', title: 'Olivine School Dz | Langues et soutien scolaire à Blida', description: 'Olivine School Dz à Ouled Yaïch, Blida : cours d’anglais, de français et de turc, ainsi que soutien scolaire au primaire, au moyen et au secondaire.' },
-    en: { dir: 'ltr', title: 'Olivine School Dz | Languages and tutoring in Blida', description: 'Olivine School Dz in Ouled Yaïch, Blida: English, French, and Turkish courses, plus tutoring for primary, middle, and secondary students.' },
+    ar: { dir: 'rtl', title: 'Olivine School Dz | لغات ودعم دراسي في البليدة', description: 'Olivine School Dz في أولاد يعيش، البليدة: دورات في الإنجليزية والفرنسية والتركية والإسبانية والألمانية، ودروس دعم للمراحل التعليمية المختلفة.' },
+    fr: { dir: 'ltr', title: 'Olivine School Dz | Langues et soutien scolaire à Blida', description: 'Olivine School Dz à Ouled Yaïch, Blida : cours d’anglais, de français, de turc, d’espagnol et d’allemand, ainsi que soutien scolaire à plusieurs niveaux.' },
+    en: { dir: 'ltr', title: 'Olivine School Dz | Languages and tutoring in Blida', description: 'Olivine School Dz in Ouled Yaïch, Blida: English, French, Turkish, Spanish, and German courses, plus tutoring for different school levels.' },
   };
 
   const initialText = new Map();
@@ -201,28 +213,73 @@
     highContrast = localStorage.getItem('olivine.contrast') === 'true';
   } catch {}
   if (!['ar', 'fr', 'en'].includes(language)) language = 'ar';
-  if (!['green', 'dark', 'ocean', 'plum', 'sand'].includes(theme)) theme = 'green';
+  if (!['green', 'black'].includes(theme)) theme = 'green';
+
+  function updateThemeToggle() {
+    const label = theme === 'green' ? ui[language].switchToLuxuryBlack : ui[language].switchToOlivineGreen;
+    document.querySelectorAll('.theme-toggle').forEach((button) => {
+      button.setAttribute('aria-label', label);
+      button.setAttribute('aria-pressed', String(theme === 'black'));
+    });
+  }
+
+  function updateLanguageSwitcher() {
+    const switcher = document.querySelector('.language-switcher');
+    if (!switcher) return;
+    const current = switcher.querySelector('.language-current-flag');
+    const choices = [...switcher.querySelectorAll('[data-language-choice]')];
+    const selected = choices.find((choice) => choice.dataset.languageChoice === language);
+    if (current && selected) {
+      const flag = selected.querySelector('svg').cloneNode(true);
+      const ids = [...flag.querySelectorAll('[id]')];
+      const replacements = new Map(ids.map((element) => [element.id, `current-${language}-${element.id}`]));
+      ids.forEach((element) => { element.id = replacements.get(element.id); });
+      flag.querySelectorAll('*').forEach((element) => {
+        [...element.attributes].forEach((attribute) => {
+          let value = attribute.value;
+          replacements.forEach((nextId, previousId) => {
+            value = value.replaceAll(`url(#${previousId})`, `url(#${nextId})`).replaceAll(`#${previousId}`, `#${nextId}`);
+          });
+          if (value !== attribute.value) element.setAttribute(attribute.name, value);
+        });
+      });
+      current.replaceChildren(flag);
+    }
+    const trigger = switcher.querySelector('.language-switcher-trigger');
+    if (trigger) trigger.setAttribute('aria-label', `${ui[language].languageButton} (${ui[language].languageNames[language]})`);
+  }
 
   function applyTheme() {
     document.documentElement.dataset.theme = theme;
     document.documentElement.dataset.contrast = highContrast ? 'high' : 'normal';
-    const colors = { green: '#123c34', dark: '#101713', ocean: '#153e5b', plum: '#4a3051', sand: '#4b3d2d' };
+    const colors = { green: '#123c34', black: '#000000' };
     document.querySelector('meta[name="theme-color"]').content = colors[theme];
-    const themeSelect = document.querySelector('#theme-setting');
     const contrastCheck = document.querySelector('#contrast-setting');
-    if (themeSelect) themeSelect.value = theme;
     if (contrastCheck) contrastCheck.checked = highContrast;
+    updateThemeToggle();
     try {
       localStorage.setItem('olivine.theme', theme);
       localStorage.setItem('olivine.contrast', String(highContrast));
     } catch {}
   }
 
+  function toggleTheme() {
+    theme = theme === 'green' ? 'black' : 'green';
+    applyTheme();
+    document.querySelectorAll('.theme-toggle').forEach((button) => {
+      button.classList.remove('is-changing');
+      void button.offsetWidth;
+      button.classList.add('is-changing');
+      window.setTimeout(() => button.classList.remove('is-changing'), 850);
+    });
+  }
+
   function setLanguage(next) {
     if (!['ar', 'fr', 'en'].includes(next)) return;
     language = next;
     document.documentElement.lang = next;
-    document.documentElement.dir = languageMeta[next].dir;
+    // Keep the page structure anchored RTL so language changes don't mirror the whole layout.
+    document.documentElement.dir = 'rtl';
     for (const [node, original] of initialText) {
       const translated = text[original.key]?.[next === 'fr' ? 0 : 1];
       const value = next === 'ar' || translated === undefined ? original.key : translated;
@@ -234,13 +291,13 @@
     }
     const menuButton = document.querySelector('.menu-toggle');
     if (menuButton) menuButton.setAttribute('aria-label', ui[next][menuButton.getAttribute('aria-expanded') === 'true' ? 'closeMenu' : 'openMenu']);
+    updateThemeToggle();
     document.title = languageMeta[next].title;
     document.querySelector('meta[name="description"]').content = languageMeta[next].description;
     document.querySelector('meta[property="og:title"]').content = languageMeta[next].title;
     document.querySelector('meta[property="og:description"]').content = languageMeta[next].description;
     document.querySelector('meta[property="og:locale"]').content = next === 'ar' ? 'ar_DZ' : next === 'fr' ? 'fr_DZ' : 'en_DZ';
-    const languageSelect = document.querySelector('#language-setting');
-    if (languageSelect) languageSelect.value = next;
+    updateLanguageSwitcher();
     try { localStorage.setItem('olivine.language', next); } catch {}
   }
 
@@ -253,17 +310,21 @@
       return `مرحباً ${name}، أهلاً بك في حسابك.`;
     },
     setLanguage,
+    toggleTheme,
   };
 
   applyTheme();
   setLanguage(language);
-  document.querySelector('#language-setting').addEventListener('change', (event) => setLanguage(event.target.value));
-  document.querySelector('#theme-setting').addEventListener('change', (event) => {
-    if (['green', 'dark', 'ocean', 'plum', 'sand'].includes(event.target.value)) theme = event.target.value;
-    applyTheme();
+  const languageSwitcher = document.querySelector('.language-switcher');
+  const languageTrigger = languageSwitcher?.querySelector('.language-switcher-trigger');
+  languageTrigger?.addEventListener('click', () => {
+    const languages = ['ar', 'fr', 'en'];
+    const next = languages[(languages.indexOf(language) + 1) % languages.length];
+    languageSwitcher.classList.remove('is-changing');
+    void languageSwitcher.offsetWidth;
+    languageSwitcher.classList.add('is-changing');
+    setLanguage(next);
+    window.setTimeout(() => languageSwitcher.classList.remove('is-changing'), 920);
   });
-  document.querySelector('#contrast-setting').addEventListener('change', (event) => {
-    highContrast = event.target.checked;
-    applyTheme();
-  });
+  document.querySelectorAll('.theme-toggle').forEach((button) => button.addEventListener('click', toggleTheme));
 })();

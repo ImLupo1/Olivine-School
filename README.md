@@ -1,56 +1,96 @@
-# Olivine School Dz website
+# Olivine School Dz
 
-Arabic-first, responsive website for Olivine School Dz, with French and English translations, five color themes, local settings, SQLite-backed student/admin accounts, public courses and school updates, and an admin publishing dashboard. The inquiry form still prepares a WhatsApp or email message for the visitor to review and send.
+موقع Olivine School Dz للتعريف ببرامج اللغات والدعم الدراسي في أولاد يعيش، البليدة. يدعم واجهة عربية RTL وترجمتين فرنسية وإنجليزية، ويضم صفحة رئيسية، دفتر منشورات عام، حسابات طلاب، ولوحة إدارة للنشر.
 
-## Prerequisites
+## المحتويات
 
-- A current desktop or mobile browser.
-- Node.js 24.15 or later. This project uses the built-in `node:sqlite` module, which is a release candidate in the Node 24 line. See the [Node.js SQLite documentation](https://nodejs.org/download/release/latest-v24.x/docs/api/sqlite.html).
+- برامج الإنجليزية والفرنسية والتركية والإسبانية والألمانية، ودروس الدعم للمراحل الابتدائية والمتوسطة والثانوية.
+- صفحة رئيسية بمعلومات المدرسة ونموذج استفسار ووسائل التواصل.
+- صفحة المنشورات الكاملة على `/posts` مع البحث والتصفية وعرض المحتوى والتفاعل بحسب تسجيل الدخول.
+- حسابات طلاب: إنشاء حساب وتسجيل دخول، إعدادات الملف الشخصي، تفضيلات الإشعارات، محفوظات/إشارات مرجعية وسجل نشاط بحسب ما يتيحه الحساب.
+- لوحة الإدارة على `/admin` لنشر الدورات والمنشورات وإدارة الوسائط.
+- ثيما بصريان: أخضر Olivine وأسود فخم. تفضيل الثيم واللغة محفوظان في المتصفح.
+- تصميم متجاوب وحركات تحترم إعداد تقليل الحركة في الجهاز.
 
-## Run locally
+## المتطلبات والتشغيل المحلي
 
-From this folder:
+- Node.js `24.15.x` (يستخدم المشروع وحدة SQLite المضمنة `node:sqlite`).
+- متصفح حديث. لا توجد خطوة تثبيت حزم أو بناء.
+
+من PowerShell، انتقل إلى مجلد المشروع وشغّل:
 
 ```powershell
 node serve.cjs
 ```
 
-On Windows, you can also run `start-site.ps1` from PowerShell; it starts the server in that terminal window.
+أو شغّل `start-site.ps1`. افتح <http://localhost:4173>، وأوقف الخادم بـ `Ctrl+C`. يمكن تغيير المنفذ بمتغير البيئة `PORT`.
 
-Open <http://localhost:4173>. Stop the server with `Ctrl+C`.
+لمعاينة الموقع على هاتف متصل بالشبكة الخاصة نفسها، أضف `HOST=0.0.0.0` إلى `.env`، شغّل الخادم، ثم افتح `http://<عنوان-الحاسوب-في-الشبكة>:4173`. لا تفتح المنفذ على الإنترنت بهذه الطريقة.
 
-For a phone preview on the same private network, set `HOST=0.0.0.0` in `.env`, start the server, then open `http://<computer-LAN-address>:4173` on the phone. The current design uses responsive layouts, reduced-size hero image sources, lazy-loaded content media, and reduced-motion support.
+عند أول تشغيل ينشئ الخادم قاعدة البيانات `data/olivine.sqlite` ومجلد الوسائط `data/media/`. احتفظ بنسخة احتياطية من الاثنين إذا أردت نقل الحسابات والمحتوى المرفوع.
 
-There is no dependency installation or compile step. On first run the server creates `data/olivine.sqlite`; `.gitignore` excludes this database. It stores account names, email addresses, password hashes and sessions. Do not add real accounts on a public server until HTTPS, persistent protected database storage, backups, email verification, password recovery, account deletion and an appropriate privacy notice are configured.
+## الحسابات ولوحة الإدارة
 
-The shareable project archive includes the site source, logos, and documentation. It excludes the local SQLite account database, `.env` secrets, and server logs. Extracted copies create a fresh database the first time the server runs.
+التسجيل العام ينشئ حساب طالب. كلمات المرور تحفظ كقيم مشتقة باستخدام scrypt، وتُدار الجلسات من الخادم.
 
-## Editing
+لإنشاء حساب مدير أو ترقية حساب موجود، شغّل:
 
-- **Logo:** Keep `olivine-logo-original.jpg` as the untouched source. The site uses `olivine-logo-display.jpg`, a padded crop. Replace the display file only with an owner-approved version.
-- **Contact information:** Update `index.html`; update the WhatsApp destination in `script.js` if the school number changes.
-- **Courses and descriptions:** Edit the cards, levels, FAQs and metadata in `index.html`. Keep service option values and `data-service` IDs stable for the form.
-- **Translations:** Edit the Arabic/French/English text catalog and generated messages in `locales.js`. Language selection updates all page copy, metadata, and document direction, and is saved on the visitor's device.
-- **Themes and settings:** Theme colors and the dialog are in `styles.css`, `premium.css`, `index.html`, and `locales.js`. Theme and contrast preferences stay in browser local storage.
-- **Visual system:** `premium.css` gives the homepage and admin workspace the glossy Olivine journal style, responsive refinements and motion; it respects the device's reduced-motion preference.
-- **Accounts:** Registration, login, logout and session lookup are handled by `serve.cjs`. Passwords are stored as scrypt hashes. The account area stores no student records. Email verification, password reset and account deletion are not implemented yet.
-- **Student dashboard:** Signed-in students see recent published courses and updates in their account panel. Publicly published courses and posts appear on the homepage.
-- **Posts journal:** Open `/posts` for the complete school journal. It combines published courses and posts, with category filters, search, media previews, detail dialogs, and the same language/theme preferences as the homepage.
-- **Admin dashboard:** Open `/admin` after signing in with an admin account. From the dashboard, admins can publish or draft courses and posts, upload JPEG/PNG/WEBP images and MP4/WEBM videos (15 MB maximum), hide or delete content, and review email notifications. Admin APIs require an admin role and same-origin requests.
-- **Create an admin:** Run `node create-admin.cjs` in this folder. Enter the administrator email and display name. If that email already has a student account, it will be promoted; otherwise enter a new password (minimum 12 characters). Public registration never grants admin access.
-- **Recommended admin email:** First create a school-controlled mailbox used only by administrators. Register on the website using that email, then run `node create-admin.cjs` and enter the same address to promote the account. If it is a new account, the command asks for its password. Set `ADMIN_NOTIFICATION_EMAIL` in `.env` to that inbox if you want publishing notices there; SMTP sender credentials must also be configured for delivery.
-- **Email notifications:** Copy `.env.example` to `.env`, set `ADMIN_NOTIFICATION_EMAIL`, and add SMTP host, port (implicit TLS on port 465), username, password, and optional sender address. The server loads `.env` at startup. Without SMTP credentials, notifications are kept in the dashboard but not emailed. Never commit `.env` or share SMTP credentials.
-- **Uploads and storage:** Uploaded media and the SQLite database are stored in `data/`. Back up this directory and configure persistent storage before hosting. Restrict access to the server account and back up content files with the database.
-- **Inquiry form:** The form validates locally and creates a WhatsApp or email link. It does not transmit, save or confirm an inquiry.
-- **Testimonials:** Add only real reviews with permission from the reviewer and photo subject.
-- **School photographs:** Instagram and Facebook could not be inspected through the available browser tools, so no images were copied from those accounts. The current hero image is from [Paulo Cristovam on Unsplash](https://unsplash.com/photos/students-in-a-classroom-appear-to-be-studying-lHodUX-jhFM) under the [Unsplash License](https://unsplash.com/license). Ask the school for approved photographs before launch.
+```powershell
+node create-admin.cjs
+```
 
-## Public hosting
+أدخل بريداً مخصصاً للمدرسة. لا تمنح التسجيلات العامة صلاحية المدير. بعد تسجيل الدخول، افتح `/admin` لإدارة الدورات والمنشورات. تدعم لوحة الإدارة مسودات ومحتوى منشوراً ووسائط صور وفيديو وفق القيود الموجودة في الخادم (حالياً 15 MB للملف).
 
-The account API needs a Node.js host and durable database storage across restarts. Static-only hosting cannot run this server. For example, GitHub Pages on GitHub Free requires a public repository and hosts the public site; it is suitable only for a brochure-only build without this account API. See [GitHub Pages plan requirements](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+يمكن إعداد إشعارات البريد عبر نسخ `.env.example` إلى `.env` ثم إدخال إعدادات SMTP والبريد الإداري. لا تُرسل الإشعارات بالبريد دون إعداد SMTP؛ قد تبقى الإشعارات داخل لوحة الإدارة. لا ترفع `.env` أو بيانات الدخول إلى GitHub ولا تضعها في هذا الملف.
 
-Choose a backend host only after confirming Node 24.15+, persistent storage or a managed database, HTTPS, backups and current pricing. No domain or hosting account has been configured.
+## تخزين البيانات والخصوصية
 
-## Verification notes
+- قاعدة SQLite والوسائط المرفوعة في `data/`؛ هذه بيانات تشغيلية وليست ملفات مصدر.
+- نموذج الاستفسار يتحقق من الحقول ويجهز رابط واتساب أو بريد ليراجعه الزائر ويرسله بنفسه. لا يرسل النموذج الطلب تلقائياً ولا يؤكد التسجيل.
+- لا تستخدم النظام لحفظ سجلات دراسية أو صحية.
+- قبل استقبال حسابات حقيقية على خادم عام، جهّز HTTPS، تخزيناً دائماً ومحميّاً، نسخاً احتياطية، سياسة خصوصية، وتدفقات التحقق من البريد واستعادة كلمة المرور وحذف الحساب. هذه التدفقات غير مكتملة حالياً.
+- لا تنشر قاعدة البيانات المحلية أو مجلدات الوسائط الخاصة بالمستخدمين أو سجلات الخادم.
 
-The site uses Node.js built-ins only. See [OWNER-HANDOFF.md](./OWNER-HANDOFF.md) for launch and privacy checks before public hosting.
+## ملفات المشروع
+
+| الملف | الغرض |
+| --- | --- |
+| `index.html` | الصفحة الرئيسية، معلومات البرامج والتواصل ونموذج الاستفسار ونافذة الحساب. |
+| `posts.html` | صفحة دفتر المنشورات العامة. |
+| `admin.html` | لوحة إدارة الدورات والمنشورات. |
+| `styles.css` | أنماط الموقع الأساسية والتخطيط والاستجابة. |
+| `premium.css` | التحسينات البصرية والحركات وعناصر الصفحة الرئيسية والإدارة. |
+| `posts.css`, `posts-social.css` | تصميم المنشورات والتفاعلات الاجتماعية. |
+| `black-theme.css` | ألوان الثيم الأسود. |
+| `account-features.css` | تصميم ميزات الحساب. |
+| `theme.js` | تطبيق تفضيل الثيم مبكراً عند تحميل الصفحة. |
+| `locales.js` | نصوص العربية والفرنسية والإنجليزية والتحويل بين اتجاهي RTL وLTR. |
+| `script.js` | تفاعلات الرئيسية، نموذج الاستفسار، الحساب ومحتوى الصفحة. |
+| `posts.js` | البحث والتصفية وتفاعلات دفتر المنشورات. |
+| `account-features.js` | أدوات الحساب وتفضيلاته. |
+| `admin.js`, `admin.css` | وظائف وتصميم لوحة الإدارة. |
+| `serve.cjs` | خادم Node.js وواجهات API وتهيئة SQLite وتقديم الملفات الثابتة. |
+| `create-admin.cjs` | أداة سطر الأوامر لإنشاء مدير أو ترقية حساب. |
+| `.env.example` | أسماء متغيرات إعداد البريد والشبكة، بلا أسرار فعلية. |
+| `OWNER-HANDOFF.md` | نقاط تسليم المالك وقائمة ما قبل الإطلاق. |
+
+**ملاحظة للمطور:** الخادم يقدّم قائمة صريحة من الملفات الثابتة في `serve.cjs`. عند إنشاء ملف CSS أو JavaScript جديد، أضف مساره إلى القائمة وحدّث رابط الصفحة، أو ضع التعديل في ملف مخدوم بالفعل. استخدم قيمة إصدار جديدة في رابط CSS/JS عند الحاجة لتجاوز ذاكرة المتصفح.
+
+## التعديل
+
+- لتغيير العناوين وبيانات الاتصال ومحتوى البرامج، راجع `index.html`، والنصوص المقابلة في `locales.js`.
+- حافظ على قيم `data-service` وقيم خيارات النموذج متطابقة حتى يبقى اختيار البرنامج يعمل.
+- للتصميم والحركات، راجع ملفات CSS أعلاه؛ اختبر RTL وLTR وعرض الهاتف ولا تزل دعم `prefers-reduced-motion`.
+- استبدل صورة الشعار المعروضة فقط بعد موافقة المدرسة، واحتفظ بالنسخة الأصلية دون تعديل.
+- صور المدرسة يجب أن تكون معتمدة من صاحبها. الصورة الرئيسية الحالية مصدرها [Unsplash](https://unsplash.com/photos/students-in-a-classroom-appear-to-be-studying-lHodUX-jhFM) وتخضع [لرخصة Unsplash](https://unsplash.com/license).
+
+## النشر والاستضافة
+
+GitHub Pages استضافة ملفات ثابتة فقط، لذلك لا تشغّل `serve.cjs` ولا API الحسابات أو SQLite. يصلح الموقع عليها كنسخة تعريفية ثابتة بعد فصل أو تعطيل ميزات الخادم. لتشغيل الحسابات والنشر، استخدم استضافة Node.js مع قاعدة بيانات ووسائط دائمة. لم يتم نشر المشروع أو ربط نطاق به بعد؛ راجع الشروط والحصص الحالية لموفر الاستضافة قبل نقل بيانات حقيقية.
+
+لا ترفع `.env` أو `data/olivine.sqlite` أو سجلات التشغيل. إعداد `.gitignore` يستثني ملفات البيانات والأسرار المحلية. عند نقل المشروع إلى حاسوب أو حساب آخر، انقل ملفات المصدر، وانقل `data/` فقط إذا كنت تقصد نقل بيانات الحسابات والمحتوى، وانقل `.env` بشكل خاص وآمن عند الحاجة.
+
+## فحوصات ما قبل الإطلاق
+
+تحقق من رقم الهاتف والبريد والعنوان وروابط الشبكات الاجتماعية، ومن البرامج والمواعيد والأسعار. راجع الترجمات بواسطة متحدثين بالفرنسية والإنجليزية. اختبر التسجيل والدخول، صلاحيات المدير، نشر/إخفاء المحتوى، رفع الصور والفيديو، تفاعلات المنشورات، الإشعارات، عرض الهاتف، وروابط واتساب والبريد. راجع `OWNER-HANDOFF.md` للتفاصيل.
+

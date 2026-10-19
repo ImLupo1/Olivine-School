@@ -4,4 +4,7 @@ data/*.sqlite-wal
 preview-server*.log
 server*.log
 .env
+.env.*
+!.env.example
+node_modules/
 data/media/
